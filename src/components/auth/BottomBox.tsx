@@ -1,0 +1,30 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { BaseBox } from "../shared";
+
+const SBottomBox = styled(BaseBox)`
+  padding: 20px;
+  text-align: center;
+  a {
+    font-weight: 600;
+    margin-left: 5px;
+    color: ${(props) => props.theme.accent};
+  }
+`;
+
+interface IBottomBox {
+  cta: string;
+  linkText: string;
+  link: string;
+}
+
+function BottomBox({ cta, link, linkText }: IBottomBox) {
+  return (
+    <SBottomBox>
+      <span>{cta}</span>
+      <Link to={link}>{linkText}</Link>
+    </SBottomBox>
+  );
+}
+
+export default BottomBox;
